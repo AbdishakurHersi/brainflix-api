@@ -14,10 +14,7 @@ app.use(express.json());
 
 //define routes
 app.use("/", videoRoutes);
-// app.get("/", function (request, response) {
-//   response.send("hi");
-// });
-
+app.use(express.static("./public/images"));
 // bootstrap the server
 app.listen(PORT, function () {
   console.log("the server is running on port ", PORT);
