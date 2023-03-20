@@ -9,7 +9,6 @@ router.get("/videos", (request, response) => {
 });
 
 router.get("/videos/:id", (req, res) => {
-  // console.log(req.params);
   const videosFile = fs.readFileSync("./data/video-details.json");
   const videosArray = JSON.parse(videosFile);
   const videoWithID = videosArray.find((video) => {
@@ -41,7 +40,6 @@ router.post("/upload", (req, res) => {
   });
 
   fs.writeFileSync("./data/video-details.json", JSON.stringify(videosArray));
-  // res.json(videosArray);
 });
 
 module.exports = router;
